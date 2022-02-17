@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>점수결과 입니다</h1>
+    <p id="result"></p>
+    <script>
+      let score = prompt("점수를 입력해주세요");
+      if (score >= 60) {
+        document.getElementById("result").innerHTML = "true";
+      } else {
+        document.getElementById("result").innerHTML = "false";
+      }
+    </script>
+  </body>
+</html>
