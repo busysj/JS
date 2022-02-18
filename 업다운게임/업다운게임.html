@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>업다운 게임</h1>
+    <h3>설명</h3>
+    <p>
+      먼저 컴퓨터가 랜덤한 수를 정한다. <br />
+      사용자는 input text안에서 숫자를 넣는다 <br />
+      input의 button을 이용해서 값을 받아온다 <br />
+      document.getElementById("")을 사용해서 값 가져오기 <br />
+      <b>이 값을 랜덤한 수와 비교해서 큰 지 작은 지 알려준다</b> <br />
+      랜덤한 수를 맞출 때까지 <b>반복</b>
+    </p>
+    <p>
+      body 아래 script 태그에 사용자가 적을 변수값(임의)과 <br />
+      랜덤값(Math.random*100)을 넣어 두 수를 비교하는 if문을 만들기 <br />
+      * document.write()로 알려주기
+    </p>
+    <p>
+      프롬프트로 값을 받아서 랜덤값을 맞출 때까지 반복하기 <br />
+      * 주의 : 프롬프트 설명란에 작성한 수가 큰 지 작은 지 알려주기
+    </p>
+    <input type="text" id="user" />
+    <input type="button" id="submit" onclick="game()" value="확인" />
+    <p id="result"></p>
+    <script>
+      let computer = parseInt(Math.random() * 100);
+      //   let user = Number(prompt("숫자 입력"));
+
+      //   while (user !== computer) {
+      //     if (user < computer) {
+      //       user = Number(prompt("작습니다"));
+      //     } else {
+      //       user = Number(prompt("큽니다"));
+      //     }
+      //   }
+      //   document.write(computer + " 정답!");
+
+      //input타입
+      function game() {
+        let user = document.getElementById("user").value;
+        if (user > computer) {
+          document.getElementById("result").innerHTML = "큽니다";
+        } else if (user == computer) {
+          document.getElementById("result").innerHTML = computer + "정답!";
+        } else {
+          document.getElementById("result").innerHTML = "작습니다";
+        }
+      }
+    </script>
+  </body>
+</html>

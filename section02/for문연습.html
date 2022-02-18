@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let score = [60, 70, 80, 90, 40, 70, 70];
+      let sum = 0;
+      for (let i = 0; i < score.length; i++) {
+        sum = sum + score[i];
+      }
+      document.write(sum / score.length);
+
+      let sum1 = 0;
+      for (let j = 1; j <= 100; j++) {
+        if (j % 2 == 1) {
+          sum1 = sum1 + j;
+        }
+      }
+      document.write("<br>" + sum1);
+
+      let sum2 = 0;
+      for (let k = 1; k <= 100; k++) {
+        if (k % 3 == 0 || k % 5 == 0) {
+          sum2 = sum2 + k;
+        }
+      }
+      document.write("<br>" + sum2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // break문
+      let count = 0;
+      let pw = "green";
+      while (pw !== "green") {
+        count++;
+        pw = prompt("비밀번호 입력");
+        if (pw == "green") {
+          document.write(count + "회 시도");
+          break;
+        }
+        if (count == 5) {
+          document.write("시도 횟수를 초과했습니다");
+          break;
+        }
+      }
+
+      // continue문
+      for (let i = 1; i <= 10; i++) {
+        // 7일 때 출력 x
+        if (i == 7) {
+          continue;
+        }
+        document.write(i);
+      }
+      document.write("<br>");
+      //실습
+      let num = 1;
+      while (true) {
+        document.write(num);
+        if (num == 10) {
+          break;
+        }
+        num++;
+      }
+      document.write("<br>");
+      for (let num1 = 1; num1 <= 10; num1++) {
+        if (num1 % 3 == 0) {
+          continue;
+        }
+        document.write(num1);
+      }
+    </script>
+  </body>
+</html>
