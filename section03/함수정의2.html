@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 선언적 (명시적) 함수
+      function functionNameAnother() {
+        // 매개변수X
+        document.write("홍길동입니다"); // 함수내용 출력
+      } // return 할당하지않고 함수 선언 끝
+
+      //실습
+      function introName(name) {
+        document.write("안녕하세요 " + name + " 입니다. 반갑습니다");
+      }
+
+      function introNameReturn(name) {
+        return "안녕하세요 " + name + "입니다. 반갑습니다";
+      }
+
+      function introNameReturnLog(name) {
+        console.log("함수가 출력되었습니다");
+        return "안녕하세요 " + name + " 입니다. 반갑습니다";
+      }
+
+      function area(num1, num2) {
+        let area = num1 * num2;
+        return area;
+      }
+
+      function avrg(array) {
+        let average = 0,
+          sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          sum += array[i];
+        }
+        average = sum / array.length;
+        return average;
+      }
+
+      function add(num1, num2) {
+        if (num1 == undefined) {
+          num1 = 0;
+        }
+        if (num2 == undefined) {
+          num2 = 0;
+        }
+        let sum = num1 + num2;
+        return sum;
+      }
+
+      // 나머지 매개변수
+      function numPrint(a, ...b) {
+        document.write("<p>" + a + "</p>");
+        document.write("<p>" + b + "</p>");
+      }
+
+      // arguments
+      function numArgu(a) {
+        document.write("<p>" + a + "</p>");
+        document.write("<p>" + arguments[1] + "</p>");
+        // arguments는 모든 인수를 참조하여 값을 들고온다
+      }
+
+      function addAll() {
+        let sum = 0;
+        for (num of arguments) {
+          sum += num;
+        }
+        return sum;
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      // 매개변수와 리턴값이 있는 함수의 형태
+      // 선언적 (명시적) 함수
+      function functionName(name) {
+        // 매개변수 name, 값을 받아올 수 있다
+        document.write(name); // html에 출력하는 코드
+        return name + "입니다"; // name입니다를 반환
+        // 모든 함수는 리턴값을 갖는다. 할당되지 않은 경우 undefined
+      } // 함수 선언 끝
+
+      // 함수 호출
+      functionName("홍길동");
+
+      //실습
+      function intro() {
+        document.write("안녕하세요.반갑습니다");
+      }
+
+      intro();
+
+      functionNameAnother();
+
+      introName("홍길동");
+
+      document.write(introNameReturn("홍길동"));
+
+      document.write(introNameReturnLog("홍길동"));
+
+      document.write(area(5, 10));
+
+      let numArray = [30, 60, 40, 60, 20];
+      document.write(avrg(numArray));
+
+      document.write(add(5));
+
+      numPrint(1, 2, 3, 4, 5);
+      numArgu(123, 456);
+
+      document.write(addAll(5));
+    </script>
+  </body>
+</html>
