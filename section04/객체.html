@@ -51,6 +51,31 @@
         // 메소드 추가
         return "잎사귀가 노랗게 되었습니다";
       };
+
+      let myBook = new Object();
+      myBook.title = "어린왕자";
+      myBook.price = 6000;
+      myBook.intro = function () {
+        return this.title + "입니다 " + this.price + "원 입니다";
+      };
+      myBook.discount = function () {
+        return this.price * 0.9;
+      };
+
+      let myWallet = new Object();
+      myWallet.owner = "홍길동";
+      myWallet.money = 10000;
+      myWallet.show = function () {
+        return "현재 " + this.money + "원 남았습니다";
+      };
+      myWallet.buy = function (price) {
+        // 물건금액(매개변수)을 받아와서 현재의 돈에서 감소
+        if (this.money < price) {
+          return "물건을 살 수 없다";
+        } else {
+          return (this.money = this.money - price);
+        }
+      };
     </script>
   </body>
 </html>
