@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Product(name, pay) {
+        this.name = name;
+        this.pay = pay;
+        this.keep = function () {
+          return this.name + "을 보관했습니다";
+        };
+        this.getPay = function () {
+          return this.pay;
+        };
+      }
+      let bookProduct = new Product("book", 6000);
+      let pencilProduct = new Product("pencil", 2000);
+      let hatProduct = new Product("hat", 8000);
+
+      //객체 3번
+      function User(id, money) {
+        this.id = id;
+        this.money = money;
+        this.buyList = [];
+        this.charge = function (plusMoney) {
+          return (money += plusMoney);
+        };
+        this.buy = function (product) {
+          this.money -= product.getPay();
+          this.buyList.push(product.name);
+        };
+      }
+      let user1 = new User("Harry", 10000);
+    </script>
+  </body>
+</html>

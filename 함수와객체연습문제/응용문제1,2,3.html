@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Lcm(a, b) {
+        let n = 1; // 1~n까지 증가시키면서 b와 곱함
+        while ((n * b) % a != 0) {
+          // 1~a값과 b값을 곱해 a로 나누었을 때 나머지가 0이 아니라면 반복
+          n++; // 1씩 증가
+        }
+        return n * b;
+      }
+      function LcmRenewal(a, b) {
+        let n = 1;
+        let lcmNum = 0;
+        while (true) {
+          lcmNum = n * b;
+          if (lcmNum % a == 0) {
+            // 나머지가 0이라면 반복문을 나옴
+            break;
+          }
+          n++;
+        }
+        return lcmNum;
+      }
+
+      ////////////////////////////////////////////
+
+      let myProfile = {
+        name: "김개발",
+        address: {
+          email: "geabal@gmail.com",
+          home: "위워크",
+        },
+        myFavorite: {
+          food: [
+            {
+              name: "샐러드",
+              price: 3500,
+            },
+            {
+              name: "삼겹살",
+              price: 15000,
+            },
+          ],
+          hobby: ["축구"],
+        },
+      };
+
+      function getAnswer(myProfile) {
+        return myProfile.myFavorite.food[0].name;
+      }
+
+      ////////////////////////////////////////////
+
+      function Profile(name, phoneNumber) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.calling = function () {
+          return this.name + "에게 전화하고 있습니다";
+        };
+        this.profileBook = [];
+        profileBook.push(name, phoneNumber);
+      }
+    </script>
+  </body>
+</html>

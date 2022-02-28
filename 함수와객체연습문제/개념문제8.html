@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Product(name, weight, price) {
+        this.name = name;
+        this.weight = weight;
+        this.price = price;
+        this.calculate = function (weight) {
+          return (price = (1690 * weight) / 100);
+        };
+      }
+      let pigProduct = new Product("돼지삼겹살", 100, 1690);
+    </script>
+  </body>
+</html>
