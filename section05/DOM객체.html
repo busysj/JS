@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제목입니다</title>
+  </head>
+  <body>
+    <a href="">링크</a>
+    <p class="class-name">단락</p>
+
+    <h1 id="title">제목</h1>
+
+    <div class="class">
+      <ul>
+        <li>첫 번째 요소</li>
+        <li>두 번째 요소</li>
+        <li>세 번째 요소</li>
+        <li>네 번째 요소</li>
+      </ul>
+    </div>
+
+    <form id="form">
+      <input type="text" />
+      <input type="submit" value="제출" />
+    </form>
+    <script>
+      // let cl = document.querySelector(".class-name")
+      // cl.innerHTML = "클래스를 통해 수정된 내용";
+
+      // let h1t = document.querySelector("#title")
+      // h1t.innerHTML = "아이디를 들고 와서 수정된 내용"
+
+      let ulEle = document.querySelectorAll(".class li");
+      for (let i = 0; i < ulEle.length; i++) {
+        ulEle[i].innerHTML = "요소들을 한 번에 수정한 내용";
+      }
+    </script>
+  </body>
+</html>

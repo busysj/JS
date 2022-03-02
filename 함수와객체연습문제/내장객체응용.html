@@ -18,8 +18,30 @@
         }
       }
 
-      function randomQuiz() {
-        quizArray = [];
+      let quizArray = [
+        { quiz: "왕이 넘어지면", answer: "킹콩" },
+        { quiz: "오리가 얼면", answer: "언덕" },
+        { quiz: "한국의 수도는", answer: "서울" },
+        { quiz: "5+9", answer: "14" },
+      ];
+      function randomQuiz(quizArray, count) {
+        // 문제를 출력 : quizArray[0].quiz
+        // count만큼 출력 : 반복 (for)
+        // 랜덤하게 출력 : 인덱스값이 랜덤 quizArray[randomNum].quiz
+        // 문제 출력 : prompt
+        // count만큼 출력 : 반복 (for)
+
+        let score = 0;
+        let randomNum = 0;
+
+        for (let i = 0; i < count; i++) {
+          randomNum = Math.floor(Math.random() * quizArray.length);
+          let answer = prompt(quizArray[randomNum].quiz);
+          if (answer == quizArray[randomNum].answer) {
+            score++;
+          }
+        }
+        return count + "개 중에서 " + score + "개 맞췄습니다";
       }
     </script>
   </body>

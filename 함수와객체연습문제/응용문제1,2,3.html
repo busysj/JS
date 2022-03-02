@@ -65,9 +65,11 @@
         this.calling = function () {
           return this.name + "에게 전화하고 있습니다";
         };
-        this.profileBook = [];
-        profileBook.push(name, phoneNumber);
       }
+      let profileBook = [];
+      profileBook.push(new Profile("Harry", 0543236543));
+      // profilebook[0] = new Profile("Harry",0543236543) 동일
+      // let myProfile = new Profile("Harry",0543236543) 과 같은 형식
     </script>
   </body>
 </html>
