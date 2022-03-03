@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>값을 넣어주세요</p>
+    <input
+      id="textbox"
+      type="text"
+      value=""
+      onfocus="bgcFocus()"
+      onblur="bgcBlur()"
+    />
+    <input type="button" value="확인" onclick="textInput()" />
+    <p id="ptag"></p>
+    <script>
+      function textInput() {
+        const text1 = document.querySelector("#textbox");
+        document.querySelector("#ptag").textContent = text1.value;
+      }
+      function bgcFocus() {
+        document.querySelector("#textbox").style.backgroundColor = "gray";
+      }
+      function bgcBlur() {
+        document.querySelector("#textbox").style.backgroundColor = "white";
+      }
+    </script>
+  </body>
+</html>
