@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>업다운 게임</h1>
-    <h3>설명</h3>
+    <h1>업다운 게임(숫자맞추기게임)</h1>
+    <!-- <h3>설명</h3>
     <p>
       먼저 컴퓨터가 랜덤한 수를 정한다. <br />
       사용자는 input text안에서 숫자를 넣는다 <br />
@@ -25,12 +26,15 @@
     <p>
       프롬프트로 값을 받아서 랜덤값을 맞출 때까지 반복하기 <br />
       * 주의 : 프롬프트 설명란에 작성한 수가 큰 지 작은 지 알려주기
-    </p>
-    <input type="text" id="user" />
-    <input type="button" id="submit" onclick="game()" value="확인" />
+    </p> -->
+    <a id="start_button"> 시작 </a>
+    <p id="explan">시작 버튼을 눌러 게임을 시작하세요</p>
+    <form id="game_form">
+      <input type="text" id="user" />
+      <input type="submit" id="submit" value="확인" />
+    </form>
     <p id="result"></p>
     <script>
-      let computer = parseInt(Math.random() * 100);
       //   let user = Number(prompt("숫자 입력"));
 
       //   while (user !== computer) {
@@ -43,15 +47,52 @@
       //   document.write(computer + " 정답!");
 
       //input타입
+
+      let count = 1;
+      let computer = 0;
+      let user = 0;
+      window.onload = function () {
+        const userNum = document.querySelector("#user");
+        const startButton = document.querySelector("#start_button");
+        const gameForm = document.querySelector("#game_form");
+        const numCheck = document.querySelector("#submit");
+        gameForm.style.display = "none";
+
+        startButton.addEventListener("click", game);
+        numCheck.addEventListener("click", gameCheck);
+      };
+
       function game() {
-        let user = document.getElementById("user").value;
+        const gameForm = document.querySelector("#game_form");
+        document.querySelector("#explan").textContent =
+          "1~100사이의 수를 입력하세요";
+        gameForm.style.display = "";
+        computer = Math.floor(Math.random() * 100 + 1);
+        document.querySelector("#result").textContent = "";
+        document.querySelector("#start_button").textContent = " 재시작 ";
+        console.log(computer);
+      }
+
+      function gameCheck(e) {
+        e.preventDefault();
+        user = document.querySelector("#user").value;
         if (user > computer) {
-          document.getElementById("result").innerHTML = "큽니다";
+          document.querySelector("#result").textContent =
+            "큽니다 " + count + "회 시도";
+          count++;
         } else if (user == computer) {
-          document.getElementById("result").innerHTML = computer + "정답!";
+          document.querySelector("#result").textContent = computer + " 정답!";
+          document.querySelector("#game_form").style.display = "none";
+          document.querySelector("#explan").textContent =
+            "재시작 버튼을 눌러 게임을 시작하세요";
+        } else if (user == "") {
+          document.querySelector("#result").textContent = "";
         } else {
-          document.getElementById("result").innerHTML = "작습니다";
+          document.querySelector("#result").textContent =
+            "작습니다 " + count + "회 시도";
+          count++;
         }
+        document.querySelector("#user").value = "";
       }
     </script>
   </body>
